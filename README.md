@@ -1,7 +1,9 @@
 # Internationalization
  Ref: https://github.com/ngx-translate/core
- 
  1. Add necessary imports
+    `npm install @ngx-translate/core --save` and
+    `npm install @ngx-translate/http-loader --save`
+ 2. add Imports in App Module
     ```
     @NgModule({
     imports: [
@@ -19,20 +21,20 @@
     })
     export class AppModule { }
     ```
- 2. Create Translate files under assets/il8n/en.json or assets/il8n/de.json
+ 3. Create Translate files under assets/il8n/en.json or assets/il8n/de.json
     ```
     {
       "hello": "Hallo daar!"
     }
     ```
- 3. Add dependency injection in App component
+ 4. Add dependency injection in App component
     ```
       constructor(translate: TranslateService) {
         translate.setDefaultLang('en');
         translate.use(localStorage.getItem("lang") || 'en');
       }
     ```
- 4. use `translate` pipe when required
+ 5. use `translate` pipe when required
     ```
     <div>
       {{ 'hello' | translate }}
