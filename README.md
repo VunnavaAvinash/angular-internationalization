@@ -1,3 +1,43 @@
+# Internationalization
+ Ref: https://github.com/ngx-translate/core
+ 
+ 1. Add necessary imports
+    ```
+    @NgModule({
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        })
+    ],
+    bootstrap: [AppComponent]
+    })
+    export class AppModule { }
+    ```
+ 2. Create Translate files under assets/il8n/en.json or assets/il8n/de.json
+    ```
+    {
+      "hello": "Hallo daar!"
+    }
+    ```
+ 3. Add dependency injection in App component
+    ```
+      constructor(translate: TranslateService) {
+        translate.setDefaultLang('en');
+        translate.use(localStorage.getItem("lang") || 'en');
+      }
+    ```
+ 4. use `translate` pipe when required
+    ```
+    <div>
+      {{ 'hello' | translate }}
+    </div>
+    ```
 # App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
