@@ -1,1 +1,12 @@
-<p>nav works!</p>
+<nav>
+    <div class="row mt-5">
+        <div class="col-9"></div>
+        <div class="col-3">
+            <select name="" id="" class="custom-select" (change)="changeLang($event)">
+                <option value="en"[selected]="lang === 'en'">English</option>
+                <option value="de"[selected]="lang === 'de'">Deutsh</option>
+                <option value="ar"[selected]="lang === 'ar'">Arabic</option>
+            </select>
+        </div>
+    </div>
+</nav>
