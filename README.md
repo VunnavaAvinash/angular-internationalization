@@ -5,6 +5,11 @@
     `npm install @ngx-translate/http-loader --save`
  2. add Imports in App Module
     ```
+    // AoT requires an exported function for factories
+    export function HttpLoaderFactory(http: HttpClient) {
+      return new TranslateHttpLoader(http);
+    }
+
     @NgModule({
     imports: [
         BrowserModule,
