@@ -26,7 +26,7 @@
     })
     export class AppModule { }
     ```
- 3. Create Translate files under assets/il8n/en.json or assets/il8n/de.json
+ 3. Create Translate files under assets/i18n/en.json or assets/i18n/de.json
     ```
     {
       "hello": "Hallo daar!"
